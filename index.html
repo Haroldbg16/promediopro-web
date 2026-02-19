@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Promedio de Notas | Fácil, Rápido y Gratis - MipromedioPro</title>
+    <meta name="description" content="Calcula tu promedio de notas ponderado o simple de forma fácil y rápida. Diseñada para estudiantes universitarios y de institutos. ¡Gratis y amigable!">
+    <meta name="keywords" content="calculadora de notas, promedio de notas, calcular promedio ponderado, estudiantes universitarios, notas universidad, promedio institucional">
+    <meta property="og:title" content="Calculadora de Promedio de Notas | Fácil, Rápido y Gratis - MiPromedioPro">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Promedio<span>Pro</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#como-usar">¿Cómo usar?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="animate-up">Calculadora de Promedio Online Gratis</h1>
+                <p class="animate-up delay-1">Calcula tu promedio universitario o institucional fácilmente en segundos.</p>
+                <div class="hero-shapes">
+                    <div class="shape circle-1"></div>
+                    <div class="shape circle-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="calculator-section">
+            <div class="container">
+                <div class="glass-card calculator-card">
+                    <div class="card-header">
+                        <h2>Calculadora Académica</h2>
+                        <div class="mode-selector">
+                            <button id="mode-weighted" class="active">Ponderado (%)</button>
+                            <button id="mode-simple">Simple</button>
+                        </div>
+                    </div>
+
+                    <div id="grade-rows" class="grade-rows">
+                        <!-- Las filas se agregarán aquí a través de JS -->
+                    </div>
+
+                    <div class="card-actions">
+                        <button id="add-row" class="btn-secondary">+ Agregar Nota</button>
+                    </div>
+
+                    <div id="result-container" class="result-container">
+                        <div class="result-box">
+                            <span class="result-label">Tu Promedio</span>
+                            <span id="final-average" class="result-value">0.00</span>
+                        </div>
+                        <div id="status-badge" class="status-badge">Esperando datos...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-usar" class="info-section">
+            <div class="container grid">
+                <div class="info-card">
+                    <h3>Paso 1</h3>
+                    <p>Ingresa la nota obtenida en tu curso o examen. Escribe la calificación tal como aparece en tu sistema (por ejemplo: 15, 8 o 90). Puedes añadir varias notas para calcular tu promedio final correctamente.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Paso 2</h3>
+                    <p>Define el peso porcentual de cada nota (si usas promedio ponderado). Si tu institución asigna porcentajes distintos a cada evaluación (ej: Parcial 30%, Final 40%), introdúcelos aquí para calcular tu promedio ponderado exacto.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Paso 3</h3>
+                    <p>¡Listo! Obtén tu promedio proyectado al instante, La calculadora procesa automáticamente tus datos y muestra tu promedio simple o ponderado en segundos, ayudándote a proyectar tu resultado final.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Promediopro.com | Calculadora de Promedio Ponderado y Simple.
+Herramienta gratuita para estudiantes.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
