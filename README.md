@@ -3,7 +3,7 @@
 Calculadora de promedio de notas enfocada en estudiantes de educación superior.  
 Permite calcular promedios simples y ponderados de forma rápida, clara y gratuita.
 
-🌐 Próximamente disponible en: https://promediopro.com
+ Próximamente disponible en: https://promediopro.com
 
 ---
 
@@ -32,13 +32,13 @@ Su diseño es minimalista, rápido y enfocado en la experiencia del usuario.
 
 ---
 
-## 🎯 Objetivo del proyecto
+## Objetivo del proyecto
 
 Brindar una herramienta gratuita y accesible que facilite el cálculo de promedios académicos sin necesidad de hojas de cálculo o fórmulas manuales.
 
 ---
 
-## 📷 Características principales
+## Características principales
 
 - Interfaz moderna y limpia
 - Cálculo automático en tiempo real
@@ -53,7 +53,6 @@ Brindar una herramienta gratuita y accesible que facilite el cálculo de promedi
 - Historial de cálculos
 - Exportar resultados en PDF
 - Versión PWA instalable
-- Mejora continua de SEO
 
 ---
 
