@@ -3,7 +3,7 @@
 Calculadora de promedio de notas enfocada en estudiantes de educación superior.  
 Permite calcular promedios simples y ponderados de forma rápida, clara y gratuita.
 
-🌐 Próximamente disponible en: https://mipromediopro.com
+🌐 Próximamente disponible en: https://promediopro.com
 
 ---
 
