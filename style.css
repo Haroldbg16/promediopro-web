@@ -70,13 +70,16 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-.logo span span {
-    color: var(--secondary);
+.logo-icon img {
+    height: 32px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -108,6 +111,10 @@ nav {
         text-align: right;
         
     }
+}
+
+.logo span span {
+    color: var(--secondary);
 }
 
 /* Hero Section */
@@ -214,32 +221,77 @@ nav {
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 2rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.mode-selector {
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.scale-info {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+.scale-info span {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.threshold-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.threshold-field label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.threshold-field input {
+    width: 60px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+.selectors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.mode-selector, .scale-selector {
     background: rgba(0, 0, 0, 0.2);
-    padding: 0.4rem;
+    padding: 0.3rem;
     border-radius: 12px;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
-.mode-selector button {
+.mode-selector button, .scale-selector button {
     background: transparent;
     border: none;
     color: var(--text-dim);
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 500;
+    font-size: 0.85rem;
 }
 
-.mode-selector button.active {
+.mode-selector button.active, .scale-selector button.active {
     background: var(--primary);
     color: white;
 }
@@ -286,6 +338,11 @@ input:focus {
     border-color: var(--primary);
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+input.input-error {
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 .btn-remove {
@@ -388,7 +445,7 @@ input:focus {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
 
@@ -446,6 +503,15 @@ input:focus {
 
 /* Responsive */
 @media (max-width: 600px) {
+    .hero {
+        overflow: clip; /* Fix: Clip absolute circles from bleeding out */
+    }
+
+    .container {
+        padding: 0 1rem;
+        overflow-x: clip; /* Extra safety for mobile containers */
+    }
+
     .grade-rows.mode-weighted .grade-row {
         grid-template-columns: 1fr 75px 60px 32px;
         gap: 0.4rem;
@@ -462,6 +528,11 @@ input:focus {
         padding: 0.6rem 0.5rem;
         font-size: 0.85rem;
         min-width: 0; /* Critical to allow shrinking within grid */
+        max-width: 100%; /* Prevent widening parents */
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Force 1 column on mobile to prevent overflow-x */
     }
 
     .btn-remove {
@@ -489,37 +560,120 @@ input:focus {
 }
 
 @media (max-width: 380px) {
+    .container {
+        padding: 0 0.5rem; /* Even more compact on tiny screens */
+    }
 
     .logo {
-        font-size: 1.2rem;   
+        font-size: 1.1rem;   
     }
 
-    .container {
-        padding: 0 0.75rem;
-    }
-    
     .glass-card {
-        padding: 1.25rem 0.75rem;
+        padding: 1.25rem 0.5rem;
     }
     
     .grade-rows.mode-weighted .grade-row {
         grid-template-columns: 1fr 65px 50px 28px;
-        gap: 0.25rem;
+        gap: 0.2rem;
     }
     
     .grade-rows.mode-simple .grade-row {
         grid-template-columns: 1fr 65px 28px;
-        gap: 0.25rem;
+        gap: 0.2rem;
     }
     
     input {
-        padding: 0.5rem 0.3rem;
+        padding: 0.5rem 0.2rem;
         font-size: 0.8rem;
     }
+}
+
+/* Predictor Section */
+.predictor-section {
+    padding: 2rem 0 6rem;
+}
+
+.predictor-card {
+    max-width: 650px;
+    margin: 0 auto;
+    border-top: 4px solid var(--secondary);
+}
+
+.btn-sync {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    color: var(--secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-sync:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+.sync-icon {
+    font-size: 1rem;
+}
+
+.input-help {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+.predictor-card .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 1rem;
+}
+
+.predictor-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.predictor-result-box {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-color: rgba(6, 182, 212, 0.2);
+}
+
+@media (max-width: 600px) {
+    .predictor-inputs {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
     
-    .btn-remove {
-        width: 28px;
-        height: 28px;
+    .predictor-card {
+        padding: 1.5rem;
     }
 }
 
@@ -538,3 +692,97 @@ footer p {
     color: var(--text-dim);
     font-size: 0.95rem;
 }
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 0 6rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--primary);
+    background: rgba(30, 41, 59, 0.9);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    user-select: none;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: var(--accent);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Suficiente para el texto */
+    padding: 0 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .faq-question {
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+}
+
