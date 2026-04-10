@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Principal -->
+    <title>Calculadora de Promedio Ponderado y Nota Final | PromedioPro</title>
+    <meta name="description"
+        content="Calcula tu promedio ponderado al instante y descubre cuánto necesitas en tu examen final. Para notas y calificaciones. Gratis, sin registro.">
+    <!-- Canonical y Hreflang -->
+    <link rel="canonical" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-PE" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-CL" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-MX" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-ES" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-CO" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-AR" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es-BO" href="https://promediopro.com/">
+    <link rel="alternate" hreflang="es" href="https://promediopro.com/">
+
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calculadora de Promedio Ponderado y Nota Final | PromedioPro">
+    <meta property="og:description"
+        content="Calcula tu promedio ponderado al instante y descubre cuánto necesitas en tu examen final. Para notas y calificaciones. Gratis, sin registro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promediopro.com/">
+    <meta property="og:image" content="https://promediopro.com/img/icon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="es_CL">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_AR">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="og:site_name" content="PromedioPro">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadora de Promedio Ponderado y Nota Final | PromedioPro">
+    <meta name="twitter:description"
+        content="Calcula tu promedio ponderado al instante y descubre cuánto necesitas en tu examen final. Para notas y calificaciones. Gratis, sin registro.">
+    <meta name="twitter:image" content="https://promediopro.com/img/icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/frame-192.png">
+
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://promediopro.com/#organization",
+      "name": "PromedioPro",
+      "url": "https://promediopro.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://promediopro.com/img/icon.png"
+      },
+      "description": "Herramienta académica gratuita para calcular el promedio de notas ponderado y simple, orientada principalmente a estudiantes universitarios de Perú y disponible para toda Latinoamérica y España.",
+      "foundingDate": "2026",
+      "areaServed": [
+        { "@type": "Country", "name": "Perú" },
+        { "@type": "Country", "name": "Chile" },
+        { "@type": "Country", "name": "México" },
+        { "@type": "Country", "name": "España" },
+        { "@type": "Country", "name": "Colombia" },
+        { "@type": "Country", "name": "Argentina" },
+        { "@type": "Country", "name": "Venezuela" },
+        { "@type": "Country", "name": "Ecuador" },
+        { "@type": "Country", "name": "Bolivia" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://promediopro.com/#website",
+      "url": "https://promediopro.com/",
+      "name": "PromedioPro",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://promediopro.com/#organization"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://promediopro.com/#webapp",
+      "name": "Calculadora de Promedio Ponderado y Nota Final | PromedioPro",
+      "alternateName": "PromedioPro",
+      "url": "https://promediopro.com/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "es",
+      "isAccessibleForFree": true,
+      "browserRequirements": "Requiere navegador moderno con JavaScript habilitado",
+      "description": "Calcula tu promedio ponderado al instante y descubre cuánto necesitas en tu examen final. Para notas y calificaciones. Gratis, sin registro.",
+      "featureList": [
+        "Cálculo de promedio ponderado",
+        "Cálculo de promedio simple",
+        "Escalas académicas: 0-20, 0-10, 1-7 y 0-100",
+        "Configuración personalizada de nota mínima aprobatoria",
+        "Predictor de nota necesaria en examen final"
+      ],
+      "publisher": {
+        "@id": "https://promediopro.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "potentialAction": {
+        "@type": "UseAction",
+        "target": "https://promediopro.com/#calculadora"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://promediopro.com/#webpage",
+      "url": "https://promediopro.com/",
+      "name": "Calculadora de Promedio Ponderado y Nota Final | PromedioPro",
+      "description": "Calcula tu promedio ponderado al instante y descubre cuánto necesitas en tu examen final. Para notas y calificaciones. Gratis, sin registro.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://promediopro.com/#website"
+      },
+      "about": {
+        "@id": "https://promediopro.com/#webapp"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://promediopro.com/img/icon.png"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://promediopro.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo sacar el promedio final de calificaciones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para sacar tu promedio final multiplica cada nota por su peso porcentual, suma los resultados y divídelos entre 100. Por ejemplo si tienes un parcial (40%) con nota 14 y un final (60%) con nota 12: (14×0.40) + (12×0.60) = 5.6 + 7.2 = 12.8. Con PromedioPro puedes hacerlo automáticamente en segundos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo calcular el promedio del semestre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para calcular tu promedio del semestre ingresa todas tus evaluaciones con su porcentaje según el sílabo del curso. Multiplica cada nota por su peso y suma los resultados. Por ejemplo: Prácticas 14 (20%) + Parcial 13 (30%) + Trabajos 15 (10%) + Final 12 (40%) → (14×0.20) + (13×0.30) + (15×0.10) + (12×0.40) = 2.8 + 3.9 + 1.5 + 4.8 = 13.00. Si usas promedio simple, suma todas las notas y divide entre la cantidad de evaluaciones. PromedioPro te permite calcular el promedio del semestre con hasta 12 evaluaciones al instante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa promedio ponderado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El promedio ponderado es un cálculo donde cada nota tiene un peso o porcentaje distinto según su importancia. A diferencia del promedio simple donde todas las notas valen igual, en el ponderado un examen final puede valer 40% y una práctica solo 20%. Es el sistema estándar en universidades de Perú, México, Chile, España y toda Latinoamérica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto necesito para pasar el examen final?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usa el Predictor de PromedioPro: ingresa tu promedio actual, el peso del examen final y la nota mínima aprobatoria. Te calculamos exactamente cuánto necesitas. Por ejemplo, si tu promedio acumulado es 12 y el final vale 40%, necesitas un 8.25 para aprobar con nota mínima de 10.5."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tienen escalas de notas internacionales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los sistemas de calificación académica varían según el país y la institución. Las escalas más utilizadas incluyen: 0 a 20 en Perú y Venezuela, 0 a 10 en España, México y Argentina, 1.0 a 7.0 en Chile, y 0 a 100 porcentual en algunos sistemas internacionales. Si tu universidad usa una escala diferente, puedes adaptarla ingresando los valores correspondientes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo calcular notas con porcentaje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiplica cada nota por su porcentaje en decimal y suma los resultados. Ejemplo: Práctica 15 (25%) + Parcial 13 (35%) + Final 16 (40%) → (15×0.25) + (13×0.35) + (16×0.40) = 14.70. En PromedioPro ingresa el porcentaje directo en el campo Peso % y el cálculo es automático."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blanco-negro.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-icon"><img src="img/icon.png" alt="Logo PromedioPro"></span>
+                <span class="logo-text">Promedio<span>Pro</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#predictor">Predictor</a></li>
+                <li><a href="/guia">Guía de uso</a></li>
+
+            </ul>
+            <button id="menu-toggle" class="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+
+
+    <main>
+
+        <!-- Texto Flotante-->
+        <section class="hero">
+            <div class="container">
+                <h1 class="animate-up">Calcula tu Promedio de Notas</h1>
+                <p class="animate-up delay-1">al instante por porcentajes o simple, con un predictor de nota incluido.
+                </p>
+                <div class="hero-shapes">
+                    <div class="shape circle-1"></div>
+                    <div class="shape circle-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora-->
+        <section id="calculadora" class="calculator-section">
+            <div class="container">
+                <div class="glass-card calculator-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <h2>Calculadora Académica</h2>
+                            <p class="scale-info">Sistema: <span id="current-scale-text">0-20</span></p>
+                            <div class="threshold-field">
+                                <label for="pass-threshold-input">Nota Mínima para Aprobar:</label>
+                                <input type="number" id="pass-threshold-input" value="10.5" step="0.1" min="0">
+                            </div>
+                        </div>
+                        <div class="selectors-container">
+                            <div class="scale-selector">
+                                <button class="scale-btn" data-scale="7">1-7</button>
+                                <button class="scale-btn" data-scale="10">0-10</button>
+                                <button class="scale-btn active" data-scale="20">0-20</button>
+                                <button class="scale-btn" data-scale="100">0-100</button>
+                            </div>
+                            <div class="mode-selector">
+                                <button id="mode-weighted" class="active" title="Promedio Ponderado">Ponderado</button>
+                                <button id="mode-simple" title="Promedio Simple">Simple</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="grade-rows" class="grade-rows">
+                        <!-- Las filas se agregarán aquí a través de JS -->
+                    </div>
+
+                    <div class="card-actions">
+                        <button id="add-row" class="btn-secondary">+ Agregar Nota</button>
+                        <button id="reset-calculator" class="btn-outline">Reiniciar</button>
+                    </div>
+
+                    <div id="result-container" class="result-container">
+                        <div class="result-box">
+                            <span class="result-label">Tu Promedio</span>
+                            <span id="final-average" class="result-value">0.00</span>
+                            <div id="save-indicator" class="save-indicator">Datos guardados ✓</div>
+                        </div>
+                        <div id="status-badge" class="status-badge">Esperando datos...</div>
+
+                        <div class="share-actions">
+                            <button id="share-whatsapp" class="btn-share whatsapp" title="Compartir en WhatsApp">
+                                <img src="img/iconos/whatsapp.png" alt="">
+                                <span>Exporta tu Calculo </span>
+                            </button>
+                            <button id="download-image" class="btn-share outline" title="Descargar como imagen">
+                                <img src="img/iconos/download.png" alt="">
+                                <span> Descargar como imagen</span>
+                            </button>
+                        </div>
+
+                        <!-- Guía de compartir (Agregada para UX y SEO) -->
+                        <div class="share-guide-toggle-container">
+                            <button id="toggle-guide-btn" onclick="toggleGuide()" class="btn-guide-toggle"
+                                aria-expanded="false" aria-controls="share-guide-container">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                                </svg>
+                                ¿Cómo funciona cada botón?
+                                <svg id="guide-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="share-guide-container" class="share-guide">
+                            <div class="share-guide-card" aria-label="Instrucciones para compartir por WhatsApp">
+                                <div class="share-guide-icon">
+                                    <img src="img/iconos/whatsapp.png" alt="WhatsApp">
+                                </div>
+                                <div class="share-guide-text">
+                                    <h4>Compartir por WhatsApp</h4>
+                                    <p>Comparte el link por WhatsApp con un solo clic, al compartir el link, Tus amigos
+                                        abrirán el link con tus notas y promedio ya cargado. ¡pruébalo!</p>
+                                </div>
+                            </div>
+                            <div class="share-guide-card" aria-label="Instrucciones para descargar imagen">
+                                <div class="share-guide-icon"
+                                    style="background: rgba(99, 102, 241, 0.2); padding: 6px; border-radius: 8px;">
+                                    <img src="img/iconos/download.png" alt="Descargar"
+                                        style="filter: brightness(0) invert(1);">
+                                </div>
+                                <div class="share-guide-text">
+                                    <h4>Descargar como imagen</h4>
+                                    <p>Genera una tarjeta visual con tus calificaciones lista para guardar y compartir
+                                        en tus redes sociales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Predictor-->
+        <section id="predictor" class="predictor-section">
+            <div class="container">
+                <div class="glass-card predictor-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <h2>¿Cuánto necesitas para aprobar?</h2>
+                            <p class="subtitle">Calcula nota mínima que necesitas en tu examen final</p>
+                        </div>
+                        <button id="sync-calculator" class="btn-sync" title="Importar datos de la calculadora">
+                            <span class="sync-icon"><img src="img/Vector.png"
+                                    alt="Importar datos de la calculadora"></span> Importa tus notas de la calculadora
+                        </button>
+                    </div>
+
+                    <div class="predictor-inputs">
+                        <div class="input-group">
+                            <label for="current-avg">Tu Promedio Actual</label>
+                            <input type="number" id="current-avg" placeholder="Ej: 13.5" step="0.1" min="0">
+                            <small class="input-help">Ingresa tu nota promedio (0-20)</small>
+                        </div>
+                        <div class="input-group">
+                            <label for="final-weight">Peso del Final (%)</label>
+                            <input type="number" id="final-weight" placeholder="Ej: 40" min="0" max="99">
+                        </div>
+                        <div class="input-group">
+                            <label for="target-grade">Nota Deseada</label>
+                            <input type="number" id="target-grade" value="10.5" step="0.1" min="0">
+                        </div>
+                    </div>
+
+                    <div id="predictor-result" class="result-container predictor-result-box">
+                        <div class="result-box">
+                            <span class="result-label">Nota Necesaria</span>
+                            <span id="required-grade" class="result-value">0.00</span>
+                        </div>
+                        <div id="predictor-msg" class="status-badge">Completa los datos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como usar la pagina -->
+        <section id="como-usar" class="info-section">
+            <div class="container">
+                <h2 class="section-title">¿Cómo usar la Calculadora de Promedio?</h2>
+                <div class="grid">
+                    <div class="info-card">
+                        <h3>Paso 1</h3>
+                        <p><strong>Configura tu Escala</strong>. Selecciona tu sistema de notas (0-20, 1-7, etc.) y
+                            ajusta
+                            la <strong>Nota Mínima</strong> aprobatoria de tu institución. Elige entre Promedio
+                            Ponderado o
+                            Simple según tu curso.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Paso 2</h3>
+                        <p><strong>Registra tus Notas</strong>. Ingresa las calificaciones que ya tienes y asigna el
+                            peso
+                            (%) a cada una si usas el modo ponderado. Puedes agregar tantas filas como evaluaciones
+                            tenga tu
+                            semestre.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Paso 3</h3>
+                        <p><strong>Analiza tu Resultado</strong>. Obtén tu promedio actual al instante. El indicador
+                            visual
+                            te mostrará si ya alcanzaste la meta aprobatoria o si necesitas esforzarte un poco más en lo
+                            que
+                            falta.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Paso 4</h3>
+                        <p><strong>Proyecta tu Final</strong>. Usa el Predictor para saber exactamente cuánto necesitas
+                            en
+                            tu último examen. Ingresa el peso del examen restante y obtén tu meta mínima para aprobar
+                            con
+                            éxito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas Frecuentes -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="faq-container">
+
+
+                    <!-- Pregunta 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cómo sacar el promedio final de calificaciones?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>Para sacar tu promedio final multiplica cada nota por su peso porcentual, suma los
+                                    resultados y divídelos entre 100. Por ejemplo si tienes un parcial (40%) con nota 14
+                                    y un final (60%) con nota 12: (14×0.40) + (12×0.60) = 5.6 + 7.2 = 12.8. Con
+                                    PromedioPro puedes hacerlo automáticamente en segundos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cómo calcular el promedio del semestre?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>Para calcular tu promedio del semestre ingresa todas tus evaluaciones con su
+                                    porcentaje según el sílabo del curso. Multiplica cada nota por su peso y suma los
+                                    resultados. Por ejemplo: Prácticas 14 (20%) + Parcial 13 (30%) + Trabajos 15 (10%) +
+                                    Final 12 (40%) → (14×0.20) + (13×0.30) + (15×0.10) + (12×0.40) = 2.8 + 3.9 + 1.5 +
+                                    4.8 = 13.00. Si usas promedio simple, suma todas las notas y divide entre la
+                                    cantidad de evaluaciones. PromedioPro te permite calcular el promedio del semestre
+                                    con hasta 12 evaluaciones al instante.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Pregunta 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Qué significa promedio ponderado?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>El promedio ponderado es un cálculo donde cada nota tiene un peso o porcentaje
+                                    distinto según su importancia. A diferencia del promedio simple donde todas las
+                                    notas valen igual, en el ponderado un examen final puede valer 40% y una práctica
+                                    solo 20%. Es el sistema estándar en universidades de Perú, México, Chile, España y
+                                    toda Latinoamérica.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cuánto necesito para pasar el examen final?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>Usa el Predictor de PromedioPro: ingresa tu promedio actual, el peso del examen final
+                                    y la nota mínima aprobatoria. Te calculamos exactamente cuánto necesitas. Por
+                                    ejemplo, si tu promedio acumulado es 12 y el final vale 40%, necesitas un 8.25 para
+                                    aprobar con nota mínima de 10.5.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Tienen escalas de notas internacionales?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>Sí. Los sistemas de calificación académica varían según el país y la institución. Las
+                                    escalas numéricas más utilizadas en educación superior incluyen:
+                                    0 a 20, común en Perú y Venezuela.
+                                    0 a 10, utilizada en España, México y Argentina.
+                                    1.0 a 7.0, empleada en Chile.
+                                    0 a 100 (porcentual), usada en algunos sistemas académicos y equivalencias
+                                    internacionales.
+                                    Si tu universidad utiliza una escala diferente, puedes adaptarla ingresando los
+                                    valores máximos y mínimos correspondientes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Pregunta 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cómo calcular notas con porcentaje?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>Multiplica cada nota por su porcentaje en decimal y suma los resultados. Ejemplo:
+                                    Práctica 15 (25%) + Parcial 13 (35%) + Final 16 (40%) → (15×0.25) + (13×0.35) +
+                                    (16×0.40) = 14.70. En PromedioPro ingresa el porcentaje directo en el campo "Peso %"
+                                    y el cálculo es automático.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="logo-footer">
+                <span class="logo-icon"><img src="img/footer.png" alt="Logo PromedioPro footer"></span>
+                <span class="logo-text logo-text-footer">Promedio<span>Pro</span></span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Promediopro.com | Calculadora de Promedio Académico.</p>
+            <div class="footer-links">
+                <a href="#">V3.0</a>
+                <!--<a href="#"></a>-->
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="blanco-negro.js"></script>
+    <script>
+        let guideOpen = false;
+        function toggleGuide() {
+            guideOpen = !guideOpen;
+            const guide = document.getElementById('share-guide-container');
+            const arrow = document.getElementById('guide-arrow');
+            const btn = document.getElementById('toggle-guide-btn');
+            if (guideOpen) {
+                guide.classList.add('open');
+                btn.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                guide.classList.remove('open');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+    </script>
+
+    <!-- Modal de Previsualización de Imagen -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h3>Tu Tarjeta de Resultados</h3>
+                <div id="preview-image-container">
+                    <!-- La imagen generada se insertará aquí -->
+                </div>
+                <div class="modal-actions">
+                    <button id="modal-share-btn" class="btn-share whatsapp">
+                        <img src="img/iconos/compartir.png" alt="">
+                        <span>Compartir Imagen</span>
+                    </button>
+                    <button id="modal-download-btn" class="btn-share outline">
+                        <img src="img/iconos/download.png" alt="">
+                        <span>Descargar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!--poner la opcion de descargar sus notas en pdf , pero con la opcion de ver 3 anuncios y asi puedan obtener su pdf descargado -->

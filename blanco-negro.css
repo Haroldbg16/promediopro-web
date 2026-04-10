@@ -1,0 +1,676 @@
+/*
+ * ============================================================
+ *  PromedioPro — Modo Claro / Modo Oscuro
+ *  blanco-negro.css
+ * ============================================================
+ *
+ *  Este archivo gestiona el cambio completo de tema:
+ *    • Por defecto: tema oscuro (tokens de style.css)
+ *    • [data-theme="light"] en <html>: paleta Sky Blue
+ *
+ *  Cargado DESPUÉS de style.css y guia.css.
+ *  El botón de alternancia lo gestiona blanco-negro.js
+ * ============================================================
+ */
+
+/* ══════════════════════════════════════════════════════════
+   1. BOTÓN DE ALTERNANCIA · THEME TOGGLE BUTTON
+   ══════════════════════════════════════════════════════════ */
+
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;           /* píldora */
+    padding: 0.42rem 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease,
+                color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+}
+
+/* Iconos SVG dentro del botón */
+.theme-toggle-btn .icon-sun,
+.theme-toggle-btn .icon-moon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    transition: opacity 0.25s ease, transform 0.35s ease;
+}
+
+/* Oscuro → mostrar icono "☀" (para pasar a claro) */
+.theme-toggle-btn .icon-sun  { display: block; }
+.theme-toggle-btn .icon-moon { display: none;  }
+
+/* ══════════════════════════════════════════════════════════
+   2. MODO CLARO — [data-theme="light"]
+   ══════════════════════════════════════════════════════════ */
+
+[data-theme="light"] {
+
+    /* ── Tokens base ────────────────────────────────────── */
+    --primary:              #0EA5E9;
+    --primary-active:       #0284C7;
+    --secondary:            #345e75;
+    --accent:               #EF4444;
+
+    --bg-dark:              #F0F9FF;          /* fondo de página (inicio gradiente) */
+    --bg-dark-end:          #E8F4FD;          /* fondo de página (fin gradiente)    */
+
+    --card-bg:              rgba(255, 255, 255, 0.85);
+    --glass-border:         rgba(186, 230, 253, 0.8);
+
+    --text-main:            #0C4A6E;
+    --text-dim:             #0369A1;
+
+    --input-bg:             rgba(240, 249, 255, 0.9);
+    --input-border:         #BAE6FD;
+    --input-border-focus:   #38BDF8;
+    --input-placeholder:    #94C3DD;
+
+    --result-grad-start:    #0EA5E9;
+    --result-grad-end:      #0284C7;
+
+    --header-bg:            rgba(255, 255, 255, 0.70);
+    --header-border:        rgba(186, 230, 253, 0.7);
+    --header-nav-link:      #0369A1;
+    --header-nav-hover:     #0EA5E9;
+
+    --gradient:             linear-gradient(135deg, #0EA5E9, #0284C7);
+}
+
+/* ── Fondo de página ──────────────────────────────────────── */
+[data-theme="light"] body {
+    background: #E8F4FD;
+    color: var(--text-main);
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+[data-theme="light"] header {
+    background: var(--header-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom-color: var(--header-border);
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] header {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* ── Logo ──────────────────────────────────────────────────── */
+[data-theme="light"] .logo-text {
+    color: var(--text-main);
+}
+
+[data-theme="light"] header .logo-text span {
+    color: var(--primary);
+}
+
+/* ── Nav links ─────────────────────────────────────────────── */
+[data-theme="light"] .nav-links a {
+    color: var(--header-nav-link);
+}
+
+[data-theme="light"] .nav-links a:hover {
+    color: var(--header-nav-hover);
+}
+
+/* Menú móvil */
+@media (max-width: 768px) {
+    [data-theme="light"] .nav-links {
+        background: rgba(255, 255, 255, 0.98);
+        border-color: var(--header-border);
+    }
+    
+    [data-theme="light"] .nav-links a:hover,
+    [data-theme="light"] .nav-links a.active {
+        background: rgba(14, 165, 233, 0.08);
+        color: var(--primary);
+        border-color: rgba(14, 165, 233, 0.15);
+    }
+}
+
+/* Hover y activo de links en desktop (solo color, sin fondo) */
+@media (min-width: 769px) {
+    [data-theme="light"] .nav-links a:hover,
+    [data-theme="light"] .nav-links a.active {
+        background: transparent;
+        color: var(--header-nav-hover);
+        border: none;
+    }
+}
+
+/* Hamburger lines */
+[data-theme="light"] .hamburger span {
+    background: var(--text-main);
+}
+
+[data-theme="light"] .hamburger.active span:nth-child(1),
+[data-theme="light"] .hamburger.active span:nth-child(3) {
+    background: var(--primary);
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+[data-theme="light"] .hero h1,
+[data-theme="light"] .section-title {
+    background: linear-gradient(135deg, #2395ce, #26b3fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .hero p {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .circle-2 {
+    background: rgba(14, 165, 233, 0.18);
+}
+
+/* ── Glass Card ────────────────────────────────────────────── */
+[data-theme="light"] .glass-card {
+    background: var(--card-bg);
+    border-color: var(--glass-border);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.10),
+                0 2px 8px rgba(12, 74, 110, 0.06);
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .glass-card {
+        background: rgba(255, 255, 255, 0.97);
+    }
+}
+
+/* ── Selectores de escala y modo ───────────────────────────── */
+[data-theme="light"] .mode-selector,
+[data-theme="light"] .scale-selector {
+    background: rgba(219, 225, 228, 0.35);
+}
+
+[data-theme="light"] .mode-selector button,
+[data-theme="light"] .scale-selector button {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .mode-selector button.active,
+[data-theme="light"] .scale-selector button.active {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* ── Textos de la tarjeta ──────────────────────────────────── */
+[data-theme="light"] .scale-info {
+    color: var(--text-main);
+}
+
+[data-theme="light"] .scale-info span {
+    color: var(--primary);
+}
+
+[data-theme="light"] .threshold-field label {
+    color: var(--text-dim);
+}
+
+/* ── Grade rows ─────────────────────────────────────────────── */
+[data-theme="light"] .grade-row {
+    background: rgb(244, 246, 248);
+}
+
+[data-theme="light"] .grade-row:hover {
+    background: rgba(190, 212, 224, 0.3);
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+[data-theme="light"] input {
+   background: #ffffff;
+    border-color: var(--input-border);
+    color: var(--text-main);
+}
+
+[data-theme="light"] input::placeholder {
+    color: var(--input-placeholder);
+}
+
+[data-theme="light"] input:focus {
+    border-color: var(--input-border-focus);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+}
+
+[data-theme="light"] input.input-error {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ── Botón eliminar fila ────────────────────────────────────── */
+[data-theme="light"] .btn-remove {
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--accent);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+[data-theme="light"] .btn-remove:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+/* ── Botones de acción (agregar / reiniciar) ────────────────── */
+[data-theme="light"] .btn-secondary {
+    border-color: var(--input-border);
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(14, 165, 233, 0.06);
+}
+
+[data-theme="light"] .btn-outline {
+    border-color: var(--glass-border);
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .btn-outline:hover {
+    background: rgba(14, 165, 233, 0.06);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ── Result box (caja de resultado con gradiente) ───────────── */
+[data-theme="light"] .result-container {
+    border-top-color: var(--glass-border);
+}
+
+[data-theme="light"] .result-label {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .result-value {
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.25);
+}
+
+/* ── Status badge ───────────────────────────────────────────── */
+[data-theme="light"] .status-badge {
+    background: rgba(14, 165, 233, 0.08);
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .status-badge.pass {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+}
+
+[data-theme="light"] .status-badge.fail {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+}
+
+/* ── Share buttons ──────────────────────────────────────────── */
+[data-theme="light"] .btn-share.outline {
+    background: rgba(240, 249, 255, 0.9);
+    border-color: var(--glass-border);
+    color: var(--text-main);
+}
+
+[data-theme="light"] .btn-share.outline img {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(90%) saturate(2400%) hue-rotate(170deg) !important;
+}
+
+[data-theme="light"] .btn-share:hover:not(:disabled) {
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.18);
+}
+
+/* ── Share guide toggle ─────────────────────────────────────── */
+[data-theme="light"] .btn-guide-toggle {
+    border-color: var(--glass-border);
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .btn-guide-toggle:hover {
+    background: rgba(186, 230, 253, 0.2);
+}
+
+[data-theme="light"] .btn-guide-toggle.active {
+    border-color: rgba(14, 165, 233, 0.4);
+    color: var(--primary);
+}
+
+/* ── Share guide cards ──────────────────────────────────────── */
+[data-theme="light"] .share-guide-card {
+    background: rgba(240, 249, 255, 0.7);
+    border-color: var(--glass-border);
+}
+
+[data-theme="light"] .share-guide-card:hover {
+    background: rgba(186, 230, 253, 0.25);
+}
+
+[data-theme="light"] .share-guide-text h4 {
+    color: #0C4A6E;
+}
+
+[data-theme="light"] .share-guide-text p {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .share-guide-icon {
+    background: rgba(14, 165, 233, 0.15) !important;
+    border-radius: 10px;
+}
+
+/* Forzar que los iconos sean visibles en modo claro */
+/* Si los iconos originales son blancos, brightness(0) los volverá negros/oscuros */
+[data-theme="light"] .share-guide-icon img {
+    filter: brightness(0.2) !important; 
+    opacity: 1 !important;
+}
+
+/* ── Info cards (cómo usar / pasos) ─────────────────────────── */
+[data-theme="light"] .info-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: var(--glass-border);
+}
+
+[data-theme="light"] .info-card h3 {
+    color: var(--primary);
+}
+
+[data-theme="light"] .info-card p {
+    color: var(--text-dim);
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────── */
+[data-theme="light"] .faq-item {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: var(--glass-border);
+}
+
+[data-theme="light"] .faq-question {
+    color: #146a9c;
+}
+
+[data-theme="light"] .faq-question:hover {
+    background: rgba(186, 230, 253, 0.15);
+}
+
+[data-theme="light"] .faq-icon {
+    color: var(--primary);
+}
+
+[data-theme="light"] .faq-answer,
+[data-theme="light"] .faq-answer {
+    color: #334155;
+    border-top-color: var(--glass-border);
+    background: transparent;
+}
+
+/* ── Predictor card ─────────────────────────────────────────── */
+[data-theme="light"] .predictor-card {
+    border-top-color: var(--primary);
+}
+
+[data-theme="light"] .subtitle {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .input-help {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .btn-sync {
+    background: rgba(14, 165, 233, 0.08);
+    border-color: rgba(14, 165, 233, 0.3);
+    color: var(--primary);
+}
+
+[data-theme="light"] .btn-sync:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+[data-theme="light"] footer {
+    background: var(--header-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top-color: var(--header-border);
+}
+
+[data-theme="light"] .footer-copy,
+[data-theme="light"] .footer-links a {
+    color: #606264;
+}
+
+[data-theme="light"] .footer-links a:hover {
+    color: var(--header-nav-hover);
+}
+
+[data-theme="light"] .logo-footer .logo-text {
+    color: #a6a8ac;
+}
+
+/* ── Modal de imagen ────────────────────────────────────────── */
+[data-theme="light"] .modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--glass-border);
+}
+
+[data-theme="light"] .modal-content h3 {
+    color: var(--text-main);
+}
+
+[data-theme="light"] .modal-actions .btn-share.outline {
+    background: #ffffff;
+    border-color: var(--primary);
+    color: var(--text-main);
+}
+
+[data-theme="light"] .modal-actions .btn-share.whatsapp img {
+    filter: none !important; /* El icono de whatsapp suele ser blanco/verde, sobre verde se ve bien */
+}
+
+[data-theme="light"] .close-modal {
+    color: var(--text-dim);
+}
+
+[data-theme="light"] .close-modal:hover {
+    color: var(--text-main);
+}
+
+/* ══════════════════════════════════════════════════════════
+   3. BOTÓN EN MODO CLARO (icono invertido)
+   ══════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .theme-toggle-btn {
+    background: rgba(14, 165, 233, 0.1);
+    border-color: rgba(186, 230, 253, 0.9);
+    color: var(--primary);
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+    background: rgba(14, 165, 233, 0.18);
+    border-color: var(--primary);
+    color: var(--primary-active);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* En modo claro mostrar luna (para volver a oscuro) */
+[data-theme="light"] .theme-toggle-btn .icon-sun  { display: none;  }
+[data-theme="light"] .theme-toggle-btn .icon-moon { display: block; }
+
+/* ══════════════════════════════════════════════════════════
+   4. GUÍA — blanco-negro overrides para guia.html
+   ══════════════════════════════════════════════════════════ */
+
+/* Wrapper general guía */
+[data-theme="light"] .guia-wrap {
+    background: transparent;
+}
+
+/* Barra de progreso */
+[data-theme="light"] .g-progress {
+    background: rgba(186, 230, 253, 0.4);
+}
+
+[data-theme="light"] .g-progress-fill {
+    background: linear-gradient(90deg, #0EA5E9, #38BDF8);
+}
+
+/* Hero de guía */
+[data-theme="light"] .g-hero {
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .g-hero {
+        background: #ffffff;
+        border: 1px solid rgba(14, 165, 233, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        /* El resto de margins/paddings se heredan de guia.css */
+    }
+}
+
+[data-theme="light"] .g-hero h1 {
+    color: var(--text-main);
+}
+
+[data-theme="light"] .g-hero p {
+    color: var(--text-dim);
+}
+
+/* Botón back de guía */
+[data-theme="light"] .g-back-btn {
+    background: #ffffff;
+    border-color: var(--header-border);
+    color: var(--primary);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08);
+}
+
+[data-theme="light"] .g-back-btn:hover {
+    background: var(--input-bg);
+    border-color: var(--primary);
+    transform: translateX(-5px);
+}
+
+/* Artículo de guía */
+[data-theme="light"] .g-article {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: var(--glass-border);
+}
+
+/* Secciones */
+[data-theme="light"] .g-section {
+    border-bottom-color: rgba(186, 230, 253, 0.5);
+}
+
+[data-theme="light"] .g-h2 {
+    color: #0C4A6E;
+    border-left-color: var(--primary);
+}
+
+[data-theme="light"] .g-p {
+    color: #1e5f8a;
+}
+
+[data-theme="light"] .g-article strong,
+[data-theme="light"] .g-h3 {
+    color: #0C4A6E;
+}
+
+/* Fórmulas */
+[data-theme="light"] .g-formula {
+    background: rgba(240, 249, 255, 0.9);
+    border-left-color: #0EA5E9;
+    color: var(--text-main);
+}
+
+/* Highlight / success */
+[data-theme="light"] .g-highlight {
+    background: rgba(14, 165, 233, 0.1);
+    border-left-color: #0EA5E9;
+    color: #0C4A6E;
+}
+
+[data-theme="light"] .g-success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #15803d;
+}
+
+/* Sidebar */
+[data-theme="light"] .g-sidebar-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: var(--glass-border);
+}
+
+[data-theme="light"] .g-sidebar-title {
+    color: #0C4A6E;
+    border-bottom-color: rgba(186, 230, 253, 0.6);
+}
+
+[data-theme="light"] .g-faq-item {
+    border-bottom-color: rgba(186, 230, 253, 0.4);
+}
+
+[data-theme="light"] .g-faq-q {
+    color: var(--text-main);
+}
+
+[data-theme="light"] .g-faq-q:hover {
+    color: var(--primary);
+}
+
+[data-theme="light"] .g-faq-a {
+    color: var(--text-main);
+}
+
+/* CTA sidebar */
+[data-theme="light"] .g-cta {
+    background: #f0f9ff;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+[data-theme="light"] .g-cta-title {
+    color: #0c4a6e;
+}
+
+[data-theme="light"] .g-cta-p {
+    color: #475569;
+}
+
+[data-theme="light"] .g-cta-btn {
+    background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+}
+
+[data-theme="light"] .g-cta-btn:hover {
+    background: linear-gradient(135deg, #0284C7 0%, #0369a1 100%);
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+}
+
+[data-theme="light"] .g-tip-item {
+    background: rgba(14, 165, 233, 0.05);
+}
+
