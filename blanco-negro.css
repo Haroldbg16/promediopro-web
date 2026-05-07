@@ -449,6 +449,28 @@
     color: #ffffff;
 }
 
+/*Card de Recursos de Ayuda*/
+[data-theme="light"] .seo-link-card {
+    background: #ffffff;
+    border-color: rgba(14, 165, 233, 0.2);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08);
+}
+
+[data-theme="light"] .seo-link-card h3 {
+    color: #0C4A6E;
+}
+
+[data-theme="light"] .seo-link-card ul li a {
+    color: #0369A1;
+}
+
+[data-theme="light"] .seo-link-card ul li a:hover {
+    color: var(--primary);
+}
+
+
+
+
 /* ── Footer ─────────────────────────────────────────────────── */
 [data-theme="light"] footer {
     background: var(--header-bg);

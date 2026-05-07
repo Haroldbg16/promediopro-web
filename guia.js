@@ -11,9 +11,27 @@ if (menuToggle) {
 // Close menu when clicking a link
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
+        if (menuToggle) menuToggle.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('active');
     });
+});
+
+// Dropdown Logic
+const navDropdowns = document.querySelectorAll('.nav-dropdown');
+navDropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.nav-dropdown-btn');
+    if (btn) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('open');
+            navDropdowns.forEach(d => d.classList.remove('open'));
+            if (!isOpen) dropdown.classList.add('open');
+        });
+    }
+});
+
+document.addEventListener('click', () => {
+    navDropdowns.forEach(d => d.classList.remove('open'));
 });
 
 function toggleSFaq(item) {

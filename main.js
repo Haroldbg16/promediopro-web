@@ -27,6 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Dropdown Logic
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    navDropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.nav-dropdown-btn');
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('open');
+            // Close others
+            navDropdowns.forEach(d => d.classList.remove('open'));
+            // Toggle current
+            if (!isOpen) dropdown.classList.add('open');
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        navDropdowns.forEach(d => d.classList.remove('open'));
+    });
+
     // Share Guide Toggle Logic
     // Moved to index.html inline script to ensure immediate execution on click.
 
@@ -76,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Set default thresholds based on scale
             if (currentScale === 7) passThreshold = 4.0;
+            else if (currentScale === 5) passThreshold = 3.0;
             else if (currentScale === 10) passThreshold = 6.0;
             else if (currentScale === 20) passThreshold = 10.5;
             else if (currentScale === 100) passThreshold = 60;
@@ -97,6 +117,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Detección Automática de País ---
+    function detectCountryAndSetScale() {
+        if (localStorage.getItem('promediopro_data')) return; // No sobrescribir si ya hay datos
+
+        try {
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            let detectedScale = 20;
+            let detectedThreshold = 10.5;
+
+            if (timezone.includes('Santiago')) {
+                detectedScale = 7;
+                detectedThreshold = 4.0;
+            } else if (timezone.includes('Bogota') || timezone.includes('Panama') || timezone.includes('Asuncion')) {
+                detectedScale = 5;
+                detectedThreshold = 3.0;
+            } else if (timezone.includes('Mexico') || timezone.includes('Buenos_Aires') || timezone.includes('Montevideo') || timezone.includes('Madrid') || timezone.includes('Guayaquil')) {
+                detectedScale = 10;
+                detectedThreshold = 6.0;
+            } else if (timezone.includes('Caracas') || timezone.includes('Lima')) {
+                detectedScale = 20;
+                detectedThreshold = 10.5;
+            }
+
+            currentScale = detectedScale;
+            passThreshold = detectedThreshold;
+            
+            const targetBtn = Array.from(scaleBtns).find(b => parseInt(b.dataset.scale) === currentScale);
+            if (targetBtn) {
+                scaleBtns.forEach(b => b.classList.remove('active'));
+                targetBtn.classList.add('active');
+                currentScaleText.innerText = currentScale === 7 ? `1-7` : `0-${currentScale}`;
+                passThresholdInput.value = passThreshold;
+                updateAllRowsForScale();
+                updatePredictorUI();
+            }
+        } catch (e) { console.log("Auto-detection skip"); }
+    }
+
     // Pass Threshold Listener
 
     passThresholdInput.addEventListener('input', () => {
@@ -109,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         passThreshold = val;
         passThresholdInput.value = val;
-        targetGradeInput.value = val; // Sync with predictor
         calculate();
         calculatePredictor();
         saveState();
@@ -234,7 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sync target grade for predictor
         passThresholdInput.max = currentScale;
         passThresholdInput.min = currentScale === 7 ? 1 : 0;
-        targetGradeInput.value = passThreshold;
     }
 
     function updateUIForMode() {
@@ -352,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // logica del predictor
-    [currentAvgInput, finalWeightInput].forEach(input => {
+    [currentAvgInput, finalWeightInput, targetGradeInput].forEach(input => {
         input.addEventListener('input', (e) => {
             validatePredictorInput(e.target);
             calculatePredictor();
@@ -360,16 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    targetGradeInput.addEventListener('input', () => {
-        let val = parseFloat(targetGradeInput.value);
-        if (!isNaN(val)) {
-            passThreshold = val;
-            passThresholdInput.value = val;
-            calculate();
-            calculatePredictor();
-            saveState();
-        }
-    });
+
 
     function validatePredictorInput(input) {
         clampDecimals(input);
@@ -424,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
             predictorMsg.innerText = `Necesitas un milagro (supero el límite) 💀`;
             predictorMsg.className = 'status-badge fail';
         } else {
-            predictorMsg.innerText = `Necesitas sacar ${needed.toFixed(2)} para aprobar`;
+            predictorMsg.innerText = `Necesitas sacar ${Math.round(needed)} para aprobar`;
             predictorMsg.className = 'status-badge';
         }
     }
@@ -782,7 +829,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillStyle = '#0EA5E9';
             if (!isLightTheme) ctx.fillStyle = '#06b6d4';
             ctx.font = 'bold 240px Outfit';
-            ctx.fillText(finalAverageDisplay.innerText, 540, 580);
+            const avgVal = parseFloat(finalAverageDisplay.innerText);
+            ctx.fillText(isNaN(avgVal) ? '0' : Math.round(avgVal), 540, 580);
 
             ctx.fillStyle = isLightTheme ? '#0C4A6E' : 'white';
             ctx.font = '45px Inter';
@@ -792,7 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lastCalculatedNeeded > (currentScale === 7 ? 1 : 0)) {
                 ctx.fillStyle = isLightTheme ? '#334155' : 'rgba(255,255,255,0.6)';
                 ctx.font = '40px Inter';
-                ctx.fillText(`Necesitas un ${lastCalculatedNeeded.toFixed(2)} en tu examen final`, 540, 780);
+                ctx.fillText(`Necesitas un ${Math.round(lastCalculatedNeeded)} en tu examen final`, 540, 780);
             }
 
             // Footer URL
@@ -858,5 +906,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Start loading
+    detectCountryAndSetScale();
     loadState();
 });

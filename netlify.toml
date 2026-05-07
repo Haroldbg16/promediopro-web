@@ -3,10 +3,12 @@
   for = "/*"
   [headers.values]
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     Cross-Origin-Opener-Policy = "same-origin"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'self' https://docs.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 
 # Cache para assets estáticos
 [[headers]]
@@ -24,3 +26,63 @@
   from = "/guia"
   to = "/guia.html"
   status = 200
+
+[[redirects]]
+  from = "/como-sacar-promedio"
+  to = "/promedio.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cuanto-necesito-para-aprobar"
+  to = "/aprobar.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/que-es-el-gpa"
+  to = "/gpa-info.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gpa"
+  to = "/gpa.html"
+  status = 200
+
+[[redirects]]
+  from = "/aprobar"
+  to = "/aprobar.html"
+  status = 200
+
+[[redirects]]
+  from = "/gpa-info"
+  to = "/gpa-info.html"
+  status = 200
+
+# Redirecciones para canonicalización de dominio (TODO a versión SIN www)
+[[redirects]]
+  from = "http://promediopro.com/*"
+  to = "https://promediopro.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.promediopro.com/*"
+  to = "https://promediopro.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.promediopro.com/*"
+  to = "https://promediopro.com/:splat"
+  status = 301
+  force = true
+
+# Redirección de www a apex (refuerzo adicional)
+[[redirects]]
+  from = "https://www.promediopro.com/"
+  to = "https://promediopro.com/"
+  status = 301
+  force = true
+

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Principal -->
+    <title>Calculadora de GPA Americano Gratis | College y High School</title>
+    <meta name="description"
+        content="Una herramienta pensada para latinoamericanos residenciados en USA. Compatible con College (créditos) y High School (AP/Honors/Regular).">
+
+    <!-- Canonical y Hreflang -->
+    <link rel="canonical" href="https://promediopro.com/gpa.html">
+    <link rel="alternate" hreflang="es-PE" href="https://promediopro.com/gpa.html">
+    <link rel="alternate" hreflang="es-MX" href="https://promediopro.com/gpa.html">
+    <link rel="alternate" hreflang="es-ES" href="https://promediopro.com/gpa.html">
+    <link rel="alternate" hreflang="es" href="https://promediopro.com/gpa.html">
+    <link rel="alternate" hreflang="x-default" href="https://promediopro.com/gpa.html">
+
+    <!-- Open Graph y Twitter Cards -->
+    <meta property="og:title" content="Calculadora de GPA Americano | College y High School">
+    <meta property="og:description"
+        content="Una herramienta pensada para latinoamericanos residenciados en USA. Compatible con College (créditos) y High School (AP/Honors/Regular).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promediopro.com/gpa.html">
+    <meta property="og:image" content="https://promediopro.com/img/icon.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadora de GPA Americano | College y High School">
+    <meta name="twitter:description"
+        content="Una herramienta pensada para latinoamericanos residenciados en USA. Compatible con College (créditos) y High School (AP/Honors/Regular).">
+    <meta name="twitter:image" content="https://promediopro.com/img/icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- JSON-LD: SoftwareApplication & FAQPage -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculador de GPA Americano",
+        "description": "Una herramienta pensada para latinoamericanos residenciados en USA. Compatible con College (créditos) y High School (AP/Honors/Regular).",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "url": "https://promediopro.com/gpa.html"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+          "@type": "Question",
+          "name": "¿Qué es la escala GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es el sistema estándar en EE.UU. donde las letras se convierten a puntos: A=4.0, B=3.0, C=2.0, D=1.0 y F=0.0. Los signos \"+\" y \"-\" añaden o restan 0.3 puntos (ej: B+ = 3.3)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre Weighted y Unweighted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El Unweighted GPA mide tu desempeño sin considerar la dificultad. El Weighted GPA otorga puntos extra por clases avanzadas: +1.0 para AP/IB y +0.5 para Honors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el GPA acumulado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El GPA acumulado se calcula sumando los Quality Points de todos los semestres y dividiendo entre el total de créditos cursados. Puedes simularlo ingresando tu GPA y créditos previos en la calculadora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el Dean's List y cómo se obtiene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El Dean's List es un reconocimiento semestral para estudiantes con GPA ≥ 3.50. Solo se basa en el GPA semestral, no en el acumulado. Aparece automáticamente en tu ficha GPA."
+          }
+        }
+      ]
+    }
+    ]
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blanco-negro.css">
+    <link rel="stylesheet" href="gpa.css">
+    <link rel="stylesheet" href="feedback.css">
+    <script src="blanco-negro.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-icon"><img src="img/icon.png" alt="Logo PromedioPro"></span>
+                <span class="logo-text">Promedio<span>Pro</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Calculadora</a></li>
+                <li><a href="/gpa.html" class="active">Calculador GPA</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+                        Guías de uso
+                        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <ul class="nav-dropdown-menu" role="menu">
+                        <li role="menuitem"><a href="/guia.html">📘 Guía de uso completa</a></li>
+                        <li role="menuitem"><a href="/promedio.html">📊 Cómo sacar tu promedio</a></li>
+                        <li role="menuitem"><a href="/aprobar.html">🎯 ¿Cuánto necesito para aprobar?</a></li>
+                        <li role="menuitem"><a href="/gpa-info.html">🇺🇸 ¿Qué es el GPA?</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button id="menu-toggle" class="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="animate-up">Calcula tu GPA</h1>
+                <p class="animate-up delay-1">Convierte tus letras a puntos y calcula tu promedio semestral o acumulado.
+                </p>
+            </div>
+        </section>
+
+        <section class="calculator-section">
+            <div class="container">
+                <div class="glass-card calculator-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <h2>GPA Semester & Cumulative</h2>
+                            <p class="scale-info">Escala Americana <span id="current-mode-status">College
+                                    (Standard)</span><br>
+                                    <span style="font-size:0.8rem;color:var(--text-dim);font-weight:normal;">pensado para estudiantes latinos</span>
+                                    <br>
+                                    <a href="/gpa-info.html" style="color:var(--primary); text-decoration:none; font-size:0.85rem; font-weight:600;">¿Qué es el GPA?</a>
+                            </p>
+                        </div>
+                        <div class="mode-selector">
+                            <button id="mode-college" class="active">College</button>
+                            <button id="mode-hs">High School</button>
+                        </div>
+                    </div>
+
+                    <!-- Cumulative GPA Section -->
+                    <div class="cumulative-group">
+                        <div class="input-group">
+                            <label for="prev-gpa">GPA Acumulado Previo</label>
+                            <input type="number" id="prev-gpa" placeholder="Ej: 3.50" step="0.01" min="0" max="5">
+                        </div>
+                        <div class="input-group">
+                            <label for="prev-credits">Total Créditos Previos</label>
+                            <input type="number" id="prev-credits" placeholder="Ej: 60" min="0">
+                        </div>
+                    </div>
+
+                    <div id="gpa-rows" class="grade-rows">
+                        <!-- Rows added by JS -->
+                    </div>
+
+                    <div class="card-actions">
+                        <button id="add-gpa-row" class="btn-secondary">+ Agregar Curso</button>
+                        <button id="reset-gpa" class="btn-outline">Reiniciar</button>
+                    </div>
+
+                    <div id="result-container" class="result-container">
+                        <div class="result-box">
+                            <span class="result-label">GPA Semestral</span>
+                            <span id="semester-gpa" class="result-value">0.00</span>
+                        </div>
+                        <div class="result-box">
+                            <span class="result-label">GPA Acumulado</span>
+                            <span id="cumulative-gpa" class="result-value">0.00</span>
+                            <div id="save-indicator" class="save-indicator">Datos guardados ✓</div>
+                        </div>
+
+                        <div id="status-badge" class="status-badge">Ingrese datos</div>
+                        <div id="deans-list" class="deans-list-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="6" />
+                                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                            </svg>
+                            Dean's List
+                        </div>
+
+                        <div class="share-actions">
+                            <button id="download-gpa-image" class="btn-share outline">
+                                <img src="img/iconos/download.png" alt="">
+                                <span>Descargar Ficha GPA</span>
+                            </button>
+                            <button id="share-whatsapp" class="btn-share whatsapp">
+                                <img src="img/iconos/whatsapp.png" alt="">
+                                <span>Exporta tu Cálculo</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Predictor GPA -->
+        <section id="predictor-gpa" class="predictor-section">
+            <div class="container">
+                <div class="glass-card predictor-card">
+                    <div class="card-header">
+                        <div class="header-left">
+                            <h2>Predictor "What-if" GPA</h2>
+                            <p class="subtitle">¿Qué promedio necesitas en tus materias pendientes?</p>
+                        </div>
+                    </div>
+
+                    <div class="predictor-inputs">
+                        <div class="input-group">
+                            <label for="target-gpa">Meta de GPA Acumulado</label>
+                            <input type="number" id="target-gpa" placeholder="Ej: 3.50" step="0.01" min="0" max="5">
+                        </div>
+                    </div>
+
+                    <div id="predictor-result" class="result-container predictor-result-box">
+                        <div class="result-box">
+                            <span class="result-label">GPA Necesario en pendientes</span>
+                            <span id="required-gpa-val" class="result-value">0.00</span>
+                        </div>
+                        <div id="max-possible-box" class="max-possible-box" style="display:none;">
+                            <span class="max-possible-label">Máximo alcanzable:</span>
+                            <span id="max-possible-val" class="max-possible-val">0.00</span>
+                        </div>
+                        <div id="predictor-msg" class="status-badge">Selecciona "❓ Sin nota aún" en algún curso</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Explicación tipos de clase HS (compacto) -->
+        <section class="class-types-section">
+            <div class="container">
+                <h2 class="section-title sm-title">¿Qué significa Regular, Honors y AP/IB?</h2>
+                <p class="section-subtitle-sm">En High School, el tipo de clase suma puntos extra a tu Weighted GPA.</p>
+                <div class="class-types-pills">
+                    <!-- Regular -->
+                    <div class="class-pill">
+                        <div class="pill-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <div class="pill-info">
+                            <div class="pill-header">
+                                <strong>Regular</strong>
+                                <span class="pill-badge">Sin Bonus</span>
+                            </div>
+                            <p class="pill-description">Materias estándar del currículo escolar. Sigue la escala normal
+                                de 0.0 a 4.0.</p>
+                            <div class="pill-formula-box">
+                                A = 4.0 <b>·</b> B = 3.0 <b>·</b> C = 2.0
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AP / IB -->
+                    <div class="class-pill">
+                        <div class="pill-icon" style="color: #22d3ee;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <div class="pill-info">
+                            <div class="pill-header">
+                                <strong>AP / IB</strong>
+                                <span class="pill-badge ap-badge">+1.0 PTS</span>
+                            </div>
+                            <p class="pill-description">Nivel universitario (Advanced Placement o IB). Otorgan un punto
+                                completo extra.</p>
+                            <div class="pill-formula-box">
+                                A = 5.0 <b>·</b> B = 4.0 <b>·</b> C = 3.0
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Honors -->
+                    <div class="class-pill">
+                        <div class="pill-icon" style="color: #a78bfa;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <div class="pill-info">
+                            <div class="pill-header">
+                                <strong>Honors</strong>
+                                <span class="pill-badge honors-badge">+0.5 PTS</span>
+                            </div>
+                            <p class="pill-description">Clases con mayor rigor académico y velocidad. Otorgan medio
+                                punto extra al GPA.</p>
+                            <div class="pill-formula-box">
+                                A = 4.5 <b>·</b> B = 3.5 <b>·</b> C = 2.5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Cómo se calcula el GPA -->
+        <section id="como-usar" class="info-section" style="padding: 2rem 0 4rem;">
+            <div class="container">
+                <h2 class="section-title" style="margin-bottom: 2rem;">¿Cómo se calcula el GPA?</h2>
+                <div class="grid">
+                    <div class="info-card">
+                        <h3>Paso 1</h3>
+                        <p><strong>Convierte tu letra a puntos</strong>. Por ejemplo, una letra A equivale a 4.0 puntos,
+                            una B equivale a 3.0, etc.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Paso 2</h3>
+                        <p><strong>Multiplica por los créditos</strong>. Multiplica los puntos de cada letra por la
+                            cantidad de créditos de su respectiva materia para obtener los "Quality Points".</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Paso 3</h3>
+                        <p><strong>Divide entre el total</strong>. Suma todos los Quality Points y divide el resultado
+                            entre el total de créditos cursados para obtener tu GPA final.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form (Propio con Netlify Forms) -->
+        <section id="feedback-section" class="feedback-native-section">
+            <div class="container">
+                <div class="glass-card feedback-card">
+                    <div id="feedback-form-container">
+                        <h2 class="section-title">Danos tu Opinión</h2>
+                        <p class="section-subtitle">Tu feedback nos ayuda a mejorar PromedioPro para todos.</p>
+                        
+                        <form name="feedback-gpa" method="POST" data-netlify="true" id="native-feedback-form">
+                            <input type="hidden" name="form-name" value="feedback-gpa" />
+                            <!-- Rating -->
+                            <div class="form-group" id="rating-group">
+                                <label>¿Cómo calificarías PromedioPro? <span>*</span></label>
+                                <div class="star-rating">
+                                    <input type="radio" id="star5" name="rating" value="5" required /><label for="star5" title="5 estrellas">★</label>
+                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 estrellas">★</label>
+                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 estrellas">★</label>
+                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 estrellas">★</label>
+                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 estrella">★</label>
+                                </div>
+                            </div>
+ 
+                            <!-- Bugs -->
+                            <div class="form-group">
+                                <label for="bugs">🐛 ¿Encontraste algún error o algún bug?</label>
+                                <textarea id="bugs" name="bugs" placeholder="Reportarlo aquí..." rows="3"></textarea>
+                            </div>
+ 
+                            <!-- Mejoras -->
+                            <div class="form-group">
+                                <label for="improvements">💡 ¿Qué agregarías o mejorarías en la página?</label>
+                                <textarea id="improvements" name="improvements" placeholder="Describe tu idea aquí, serás escuchado..." rows="3"></textarea>
+                            </div>
+ 
+                            <button type="submit" class="btn-submit-feedback">
+                                Enviar Feedback
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polyline points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            </button>
+                        </form>
+                    </div>
+ 
+                    <!-- Mensaje de éxito (oculto por defecto) -->
+                    <div id="feedback-success" class="feedback-success-msg" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>¡Gracias por tu comentario!</h3>
+                        <p>Tu opinion importa, gracias por comentar!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ GPA -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes sobre GPA</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Qué es la escala GPA?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>Es el sistema estándar en EE.UU. donde las letras se convierten a puntos: A=4.0,
+                                    B=3.0, C=2.0, D=1.0 y F=0.0. Los signos "+" y "-" añaden o restan 0.3 puntos (ej: B+
+                                    = 3.3).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cuál es la diferencia entre Weighted y Unweighted?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>El <strong>Unweighted GPA</strong> mide tu desempeño sin considerar la dificultad. El
+                                    <strong>Weighted GPA</strong> otorga puntos extra por clases avanzadas: +1.0 para
+                                    AP/IB y +0.5 para Honors.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cómo se calcula el GPA acumulado?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>El GPA acumulado se calcula sumando los Quality Points de
+                                    <strong>todos los semestres</strong> y dividiendo entre el
+                                    <strong>total de créditos cursados</strong>. Puedes simularlo
+                                    ingresando tu GPA y créditos previos en la calculadora.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Qué es el Dean's List y cómo se obtiene?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p>El <strong>Dean's List</strong> es un reconocimiento semestral
+                                    para estudiantes con GPA ≥ 3.50. Solo se basa en el
+                                    <strong>GPA semestral</strong>, no en el acumulado.
+                                    Aparece automáticamente en tu ficha GPA.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Guía de conversión: Letras a Puntos GPA</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div>
+                                <p style="margin-bottom: 1rem;">Esta tabla muestra la equivalencia estándar. Recuerda
+                                    que el símbolo <strong>Pendiente</strong> se usa para calcular metas futuras en el
+                                    Predictor.</p>
+
+
+                                <div class="letters-grid-wrapper">
+                                    <!-- Tabla de letras -->
+                                    <div class="letters-table">
+                                        <div class="letters-table-head">
+                                            <span>Letra</span>
+                                            <span>College</span>
+                                            <span>Honors</span>
+                                            <span>AP/IB</span>
+                                            <span>Rango</span>
+                                        </div>
+                                        <div class="letter-row grade-a-plus"><span
+                                                class="letter-badge">A+</span><span>4.0</span><span>4.5</span><span>5.0</span><span
+                                                class="range">97%+</span></div>
+                                        <div class="letter-row grade-a"> <span class="letter-badge">A</span>
+                                            <span>4.0</span><span>4.5</span><span>5.0</span><span
+                                                class="range">93-96%</span>
+                                        </div>
+                                        <div class="letter-row grade-a"> <span
+                                                class="letter-badge">A−</span><span>3.7</span><span>4.2</span><span>4.7</span><span
+                                                class="range">90-92%</span></div>
+                                        <div class="letter-row grade-b"> <span
+                                                class="letter-badge">B+</span><span>3.3</span><span>3.8</span><span>4.3</span><span
+                                                class="range">87-89%</span></div>
+                                        <div class="letter-row grade-b"> <span class="letter-badge">B</span>
+                                            <span>3.0</span><span>3.5</span><span>4.0</span><span
+                                                class="range">83-86%</span>
+                                        </div>
+                                        <div class="letter-row grade-b"> <span
+                                                class="letter-badge">B−</span><span>2.7</span><span>3.2</span><span>3.7</span><span
+                                                class="range">80-82%</span></div>
+                                        <div class="letter-row grade-c"> <span
+                                                class="letter-badge">C+</span><span>2.3</span><span>2.8</span><span>3.3</span><span
+                                                class="range">77-79%</span></div>
+                                        <div class="letter-row grade-c"> <span class="letter-badge">C</span>
+                                            <span>2.0</span><span>2.5</span><span>3.0</span><span
+                                                class="range">73-76%</span>
+                                        </div>
+                                        <div class="letter-row grade-c"> <span
+                                                class="letter-badge">C−</span><span>1.7</span><span>2.2</span><span>2.7</span><span
+                                                class="range">70-72%</span></div>
+                                        <div class="letter-row grade-d"> <span
+                                                class="letter-badge">D+</span><span>1.3</span><span>1.8</span><span>2.3</span><span
+                                                class="range">67-69%</span></div>
+                                        <div class="letter-row grade-d"> <span class="letter-badge">D</span>
+                                            <span>1.0</span><span>1.5</span><span>2.0</span><span
+                                                class="range">63-66%</span>
+                                        </div>
+                                        <div class="letter-row grade-d"> <span
+                                                class="letter-badge">D−</span><span>0.7</span><span>1.2</span><span>1.7</span><span
+                                                class="range">60-62%</span></div>
+                                        <div class="letter-row grade-f"> <span class="letter-badge">F</span>
+                                            <span>0.0</span><span>0.0</span><span>0.0</span><span
+                                                class="range">0-59%</span>
+                                        </div>
+                                        <div class="letter-row grade-pending">
+                                            <span class="letter-badge pending-badge">Pendiente</span>
+                                            <span class="pending-note">No suma al GPA — Solo para el Predictor</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pending-explainer" style="margin-top: 1rem;">
+                                        <div class="pending-explainer-icon">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <polyline points="12 6 12 12 16 14" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p style="font-size: 0.8rem; line-height: 1.4;"><strong>Pendiente:</strong>
+                                                Excluye el curso del cálculo actual pero permite que el "Predictor"
+                                                calcule la nota necesaria para tu meta.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enlaces SEO / Interlinking -->
+        <section class="seo-links-section">
+            <div class="container">
+                <div class="seo-links-grid">
+                    <div class="seo-link-card">
+                        <h3>Recursos de Ayuda</h3>
+                        <ul>
+                            <li><a href="/guia.html">Cómo sacar tu promedio final paso a paso</a></li>
+                            <li><a href="/promedio.html">Aprende a calcular promedio de notas</a></li>
+                            <li><a href="/aprobar.html">Descubre cuánto necesitas para aprobar</a></li>
+                            <li><a href="/gpa-info.html">¿Qué es el GPA?</a></li>
+                            <li><a href="/">Calculador de Promedio Ponderado y Simple</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="logo-footer">
+                <span class="logo-icon"><img src="img/footer.png" alt="Logo PromedioPro footer"></span>
+                <span class="logo-text logo-text-footer">Promedio<span>Pro</span></span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Promediopro.com | Calculadora GPA Americana.</p>
+            <div class="footer-links">
+                <a href="#">V4.0</a>
+                <!--<a href="#"></a>-->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Previsualización de Imagen -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h3>Tu Tarjeta de GPA</h3>
+                <div id="preview-image-container">
+                    <!-- La imagen generada se insertará aquí -->
+                </div>
+                <div class="modal-actions">
+                    <button id="modal-share-btn" class="btn-share whatsapp">
+                        <img src="img/iconos/compartir.png" alt="">
+                        <span>Compartir Imagen</span>
+                    </button>
+                    <button id="modal-download-btn" class="btn-share outline">
+                        <img src="img/iconos/download.png" alt="">
+                        <span>Descargar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="gpa.js"></script>
+    <script src="feedback.js"></script>
+</body>
+
+</html>
